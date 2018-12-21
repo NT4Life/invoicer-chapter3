@@ -3,7 +3,7 @@ jobs:
   build:
     # Variable expansion in working_directory not supported at this time
     # You will need to modify the code below to reflect your github account/repo setup
-    working_directory: /go/src/github.com/Securing-DevOps/invoicer-chapter3
+    working_directory: /go/src/github.com/NT4Life/invoicer-chapter3
     docker:
       - image: circleci/golang:1.8
     environment:
@@ -45,7 +45,7 @@ jobs:
             docker pull owasp/zap2docker-weekly && \
             docker run -t owasp/zap2docker-weekly zap-baseline.py \
                 -u https://raw.githubusercontent.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/master/zap-baseline.conf \
-                -t http://172.17.0.2:8080/ || \
+                -t http://18.234.163.189:8080/ || \
             if [ $? -ne 1 ]; then exit 0; else exit 1; fi;
             )
 
