@@ -6,11 +6,7 @@ jobs:
     working_directory: /go/src/github.com/NT4Life/invoicer-chapter3
     docker:
       - image: circleci/golang:1.8
-    environment:
-      GO15VENDOREXPERIMENT: 1
-    branches:
-      only:
-        - master
+
     steps:
       - checkout
       - setup_remote_docker
